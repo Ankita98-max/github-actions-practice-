@@ -7,14 +7,14 @@ on:
     paths: "*.py"
 jobs:
   code-linting:
-  runs-on: ubuntu-latest
-  steps:
+    runs-on: ubuntu-latest
+    steps:
     # Cloningg the code
-    - name: Clone the code 
-      uses: actions/checkout@v7
+      - name: Clone the code 
+        uses: actions/checkout@v7
     #Installing linter
-    - name: Install the application package 
-      run: pip install ruff
+      - name: Install the application package 
+        run: pip install ruff
     #Checking for syntax error
-    - name: Check the files for linting 
-      run: ruff check .
+      - name: Check the files for linting 
+        run: ruff check .
