@@ -13,5 +13,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print environment
-        run: echo "Running workflow for environment: ${{ github.event.inputs.environment }}"
+        run: echo "Running"
 
