@@ -2,7 +2,7 @@ name: manual-trigger
 on:
   workflow_dispatch:
     inputs:
-      environments:
+      environment:
         description: "Choose an environment"
         required: true
         default: "staging"
