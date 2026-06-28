@@ -13,5 +13,5 @@ jobs:
       - name: print the runner name 
         run: echo "Runner Name:${{ runner.name }}"
       - name: Print current usser details
-        run: echo "Current User:$GITHUB_JOB_NAME"
+        run: echo "Current User:$whoami"
  
