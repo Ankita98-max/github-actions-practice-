@@ -8,12 +8,13 @@ on:
         required: true
         default: "staging"
         type: choice
-        matrix:
-          option: [staging, production]
+        options:
+          - staging
+          - production
 
 jobs:
   run-manual:
     runs-on: ubuntu-latest
     steps:
       - name: Print environment
-        run: echo "Running workflow for environment: ${{ matrix.option }}"
+        run: echo "Running workflow for environment: ${{ github.event.inputs.environment }}"
