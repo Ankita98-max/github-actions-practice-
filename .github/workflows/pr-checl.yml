@@ -7,5 +7,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: print
-        run: echo "PR checking for branch :${{ github.head_ref }}
+        run: echo "PR checking for branch :${{ github.head_ref }}"
 
