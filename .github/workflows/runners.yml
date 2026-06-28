@@ -9,9 +9,9 @@ jobs:
         os: [windows-latest, macos-latest, ubuntu-latest]
     steps:
       - name: print OS name
-        run: echo " The OS is : ${{ matrix.os }}"
+        run: echo " The OS is:${{ matrix.os }}"
       - name: print the runner name 
-        run: echo "Runner Name: $(hostname)"
+        run: echo "Runner Name:$(hostname)"
       - name: Print current usser details
         run: echo "Current User:$(whoami)"
  
