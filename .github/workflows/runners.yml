@@ -11,7 +11,7 @@ jobs:
       - name: print OS name
         run: echo " The OS is:${{ matrix.os }}"
       - name: print the runner name 
-        run: echo "Runner Name:$(hostname)"
+        run: echo "Runner Name:${{ runner.name }}"
       - name: Print current usser details
-        run: echo "Current User:$(whoami)"
+        run: echo "Current User:$GITHUB_JOB_NAME"
  
