@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
 jobs:
   explore-runner:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Explore runner details
         run: |
