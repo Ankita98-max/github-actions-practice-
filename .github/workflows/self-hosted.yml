@@ -3,7 +3,9 @@ on:
   workflow_dispatch:
 jobs:
   self-hosted:
-    runs-on: self-hosted
+    runs-on: 
+      - self-hosted
+      - Ankita-Linux
     steps:
       - name: display runner details
         run: |
