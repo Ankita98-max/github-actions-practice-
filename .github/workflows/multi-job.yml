@@ -1,0 +1,19 @@
+name: multi-job 
+on:
+  workflow-dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build phase 
+        run: echo "Build phase completed successfully."
+  test:
+    needs:[build]
+    steps:
+      - name: Test phase
+        run: echo "Test phase completed successfully."
+  deploy:
+    needs:[test]
+    steps:
+      - name: Deploy phase
+        run: echo "Deploy phase completed successfully."
