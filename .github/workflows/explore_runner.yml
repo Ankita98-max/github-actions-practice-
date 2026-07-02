@@ -1,0 +1,13 @@
+name: explore_runner
+on:
+  workflow_dispatch:
+jobs:
+  explore-runner:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Explore runner details
+        run: |
+          echo "Docker Version: $(docker --version)"
+          echo "Python Version: $(python --version)"
+          echo "Node Version: $(node --version)"
+          echo "Git Version: $(git --version)"
