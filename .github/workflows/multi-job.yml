@@ -9,11 +9,13 @@ jobs:
         run: echo "Build phase completed successfully."
   test:
     needs: [build]
+    runs-on: ubuntu-latest
     steps:
       - name: Test phase
         run: echo "Test phase completed successfully."
   deploy:
     needs: [test]
+    runs-on: ubuntu-latest
     steps:
       - name: Deploy phase
         run: echo "Deploy phase completed successfully."
