@@ -1,0 +1,29 @@
+name: conditions.yml
+on: 
+  push:
+jobs:
+  conditoncheck:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check condition
+        run: |
+          if [ ${{ github.event_name }} == 'push' ]; then
+            echo "This is a push event."
+          else
+            echo "This is not a push"
+      - name: Check condition 2 
+        if: github.ref == 'refs/heads/main'
+        run: echo "This is the main branch."
+      - name: failure step 
+        run: exit 1
+      - name: failure check 
+        if: failure()
+        run: echo "The previous step failed."
+      - name: STep that may fail
+        continue-on-error: true
+        run: |
+          echo "This step may fail."
+          exit 1  
+      - name: Verify the workflow continued after failure
+        run: echo "The workflow continued after the previous step failed."
+        
