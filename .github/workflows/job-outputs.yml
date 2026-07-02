@@ -1,19 +1,26 @@
-name: job-outputs
+name: Job Output Example
+
 on:
   workflow_dispatch:
-jobs:
-  generate-date:
-    runs-on: ubuntu-latest
-    outputs:
-      date: ${{ steps.get-date.outputs.date }}
-    steps:
-      - name: Get Date
-        id: get-date
-        run: echo "today=$(date +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
 
-  display-date:
-    needs: generate-date
-    runs-on: ubuntu-latest
-    steps:      
-      - name: Display Date
-        run: echo "The date generated in the previous job is:${{ needs.generate-date.outputs.date }}"
+jobs:
+  get-date:
+    runs-on: self-hosted
+
+    outputs:
+      date: ${{ steps.set-date.outputs.date }}
+
+    steps:
+      - name: Set output
+        id: set-date
+        run: |
+          echo "date=$(date)" >> "$GITHUB_OUTPUT"
+
+  print-date:
+    runs-on: self-hosted
+    needs: get-date
+
+    steps:
+      - name: Print date
+        run: |
+          echo "Date: ${{ needs.get-date.outputs.date }}"
