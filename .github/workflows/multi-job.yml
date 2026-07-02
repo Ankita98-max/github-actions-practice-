@@ -8,12 +8,12 @@ jobs:
       - name: Build phase 
         run: echo "Build phase completed successfully."
   test:
-    needs:[build]
+    needs: [build]
     steps:
       - name: Test phase
         run: echo "Test phase completed successfully."
   deploy:
-    needs:[test]
+    needs: [test]
     steps:
       - name: Deploy phase
         run: echo "Deploy phase completed successfully."
