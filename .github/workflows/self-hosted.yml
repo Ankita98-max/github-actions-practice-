@@ -1,0 +1,17 @@
+name: self hosted
+on:
+  workflow_dispatch:
+jobs:
+  self-hosted:
+    runs-on: self-hosted
+    steps:
+      - name: display runner details
+        run: |
+          echo "Hostname: $(hostname)"
+          echo "Working Directory: $(pwd)"
+          touch runner_details.txt
+          if [ -f runner_details.txt ]; then
+            echo "File created successfully."
+          else
+            echo "Failed to create file."
+          fi
