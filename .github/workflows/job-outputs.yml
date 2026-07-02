@@ -16,4 +16,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:      
       - name: Display Date
-        run: echo "The date generated in the previous job is: ${{ needs.generate-date.outputs.date }}"
+        run: echo "The date generated in the previous job is:${{ needs.generate-date.outputs.date }}"
