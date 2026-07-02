@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Get Date
         id: get-date
-        run: echo "::set-output name=date::$(date)" >> "$GITHUB_OUTPUT"
+        run: echo "today=$(date +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
 
   display-date:
     needs: generate-date
