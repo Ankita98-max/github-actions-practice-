@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 name: explore_runner
 on:
   workflow_dispatch:
@@ -11,3 +12,18 @@ jobs:
           echo "Python Version: $(python --version)"
           echo "Node Version: $(node --version)"
           echo "Git Version: $(git --version)"
+=======
+name: explore_runner
+on:
+  workflow_dispatch:
+jobs:
+  explore-runner:
+    runs-on: self-hosted
+    steps:
+      - name: Explore runner details
+        run: |
+          echo "Docker Version: $(docker --version)"
+          echo "Python Version: $(python --version)"
+          echo "Node Version: $(node --version)"
+          echo "Git Version: $(git --version)"
+>>>>>>> 8bde088 ( explore added)
