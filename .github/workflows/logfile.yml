@@ -1,0 +1,22 @@
+name: Build Log File
+on:
+  workflow_dispatch:
+jobs:
+  Build-log:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v3
+      - name: Create log file
+        run: |
+          mkdir -p logs
+          echo "This is a log file created by GitHub Actions." > logs/build.log
+          echo "Log file created at $(date)" >> logs/build.log
+          echo "Build completed successfully." >> logs/build.log
+          echo "Log file contents:"
+          cat logs/build.log
+      - name: Upload log file as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-log
+          path: logs/build.log
