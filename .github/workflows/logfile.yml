@@ -20,3 +20,16 @@ jobs:
         with:
           name: build-log
           path: logs/build.log
+  read-log:
+    runs-on: ubuntu-latest
+    needs: Build-log
+    steps:
+      - name: Download log file artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: build-log
+          path: downloaded-logs
+      - name: Display log file contents
+        run: |
+          echo "Contents of the downloaded log file:"
+          cat downloaded-logs/build.log
